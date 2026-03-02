@@ -427,7 +427,6 @@ app.get("/health", (_req, res) =>
 app.use((_req, res) => res.status(404).json({ error: "Route not found" }));
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`\n🏡 Renova Backend running on http://localhost:${PORT}`);
-  console.log(`   Supabase URL: ${process.env.SUPABASE_URL || "(not set — check .env)"}\n`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is running on port ${PORT}`);
 });
